@@ -11,6 +11,9 @@ function myMacro({references, _, babel}) {
     if (isValidInvocation(referencePath)) {
       const prog = referencePath.findParent(x => x.isProgram())
       prog.traverse(visitor(t))
+      // remove reference altogether
+      const par = referencePath.findParent(x => x.isExpressionStatement())
+      par.remove()
     }
   })
 }

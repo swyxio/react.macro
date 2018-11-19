@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-react-globals",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Generate code at build-time",
   "main": "dist/index.js",
   "engines": {
@@ -50,10 +50,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kentcdodds/babel-plugin-boilerplate.git"
+    "url": "https://github.com/sw-yx/react.macro.git"
   },
   "bugs": {
-    "url": "https://github.com/kentcdodds/babel-plugin-boilerplate/issues"
+    "url": "https://github.com/sw-yx/react.macro/issues"
   },
-  "homepage": "https://github.com/kentcdodds/babel-plugin-boilerplate#readme"
+  "homepage": "https://github.com/sw-yx/react.macro#readme"
 }
