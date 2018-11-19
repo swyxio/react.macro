@@ -1,15 +1,41 @@
-# babel plugin/macro react
+# babel plugin/macro for react globals
 
-This is a react monorepo for people writing babel plugins in normal plugin form as well as [`babel-plugin-macros`][babel-plugin-macros] form. Supporting two forms of the plugin can help increase adoption for a variety of user setups, and really isn't too hard once you have the right setup. Which this tries to be.
+> react plugin and macro that lets you write the React APIs as if they were all globals
 
-**if you spot something that could be a better practice, PLEASE open an issue or [tell me I'm wrong!](https://twitter.com/swyx)**
+This:
 
-## Prerequisites
+```js
+import React, { macro } from 'react.macro'; //optional if not using babel macro
+macro(); //optional if not using babel macro
 
-You should have read through the [babel handbook](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/en/plugin-handbook.md) and (optionally) the [babel-plugin-macros](https://babeljs.io/blog/2017/09/11/zero-config-with-babel-macros) blogpost.
+export default function Timer() {
+  const [state, setState] = useState(0);
+  const myRef = React.useRef(0);
+  return <Suspense>{state}</Suspense>;
+}
+```
 
-## Usage
+Translates to:
 
-Clone, not fork, this repo. Write your plugin and tests in `babel-plugin-react`, and then handle the macro portion in `react.macro`. Rename both of them to whatever your new name is.
+```js
+import React from 'react'; // added if absent, not duplicated if present
+export default function Timer() {
+  const [state, setState] = React.useState(0);
+  const myRef = React.useRef(0);
+  return <React.Suspense>{state}</React.Suspense>;
+}
+```
 
-When you are done writing and testing, run `lerna publish` from this root level and you should be good to go.
+---
+
+Creation videos:
+
+- writing the plugin: https://www.youtube.com/edit?ar=1&o=U&video_id=gNTejc1OLvU
+- publishing plugin and macro: https://www.youtube.com/watch?v=rZxchMxj6KE
+
+---
+
+ASTExplorer histories and testing
+
+- v0.07: https://astexplorer.net/#/gist/ebdc9ffceac03882d325e601c28d87a8/62d9235c51bd3586e35a8df8fa9f5f1f61eeb561
+- v0.06: https://astexplorer.net/#/gist/ebdc9ffceac03882d325e601c28d87a8/795d0a75132ec44476b1f6cc2460f6147f43b65a

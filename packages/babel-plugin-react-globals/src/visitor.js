@@ -12,27 +12,26 @@ const hookApis = [
 ]
 
 const miscApis = [
-  'Fragment',
   'Component',
   'PureComponent',
-  'Suspense',
   'createContext',
   'createElement',
   'createFactory',
   'cloneElement',
   'isValidElement',
-  'Children',
   'forwardRef',
   'createRef',
   'lazy',
   'memo',
 ]
 
+const jsxApis = ['Fragment', 'Suspense']
+
 const allApis = miscApis.concat(hookApis)
 
 export const visitor = t => ({
   Identifier(path) {
-    if (checkIfReactHookAPI(path)) {
+    if (checkIfReactAPI(allApis, path)) {
       const newME = t.memberExpression(
         t.identifier('React'),
         t.identifier(path.node.name),
@@ -41,10 +40,20 @@ export const visitor = t => ({
       path.skip()
     }
   },
+  JSXIdentifier(path) {
+    if (checkIfReactAPI(jsxApis, path)) {
+      const newME = t.jsxMemberExpression(
+        t.jsxIdentifier('React'),
+        t.jsxIdentifier(path.node.name),
+      )
+      path.replaceWith(newME)
+      path.skip()
+    }
+  },
 })
 
-function checkIfReactHookAPI(path) {
+function checkIfReactAPI(apis, path) {
   // return false if inside a member expression already
   if (path.parentPath.isMemberExpression()) return false
-  return allApis.includes(path.node.name)
+  return apis.includes(path.node.name)
 }

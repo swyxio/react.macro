@@ -1,6 +1,6 @@
 {
   "name": "react.macro",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "macro for babel-plugin-react-globals",
   "main": "index.js",
   "keywords": [
@@ -10,6 +10,14 @@
   "author": "swyx <your@name.us> (http://yourname.com/)",
   "license": "MIT",
   "dependencies": {
-    "babel-plugin-react-globals": "^0.0.6"
-  }
+    "babel-plugin-react-globals": "^0.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sw-yx/react.macro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sw-yx/react.macro/issues"
+  },
+  "homepage": "https://github.com/sw-yx/react.macro#readme"
 }
