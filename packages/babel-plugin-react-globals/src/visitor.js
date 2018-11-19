@@ -25,7 +25,7 @@ const miscApis = [
   'memo',
 ]
 
-const jsxApis = ['Fragment', 'Suspense']
+const jsxApis = ['Fragment', 'Suspense', 'ConcurrentMode', 'StrictMode']
 
 const allApis = miscApis.concat(hookApis)
 

@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-react-globals",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Generate code at build-time",
   "main": "dist/index.js",
   "engines": {
