@@ -5,7 +5,7 @@
 This:
 
 ```js
-import React, { macro } from 'react.macro'; //optional if not using babel macro
+import { macro } from 'react.macro'; //optional if not using babel macro
 macro(); //optional if not using babel macro
 
 export default function Timer() {
