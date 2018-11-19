@@ -1,6 +1,6 @@
-# babel plugin/macro boilerplate
+# babel plugin/macro react
 
-This is a boilerplate monorepo for people writing babel plugins in normal plugin form as well as [`babel-plugin-macros`][babel-plugin-macros] form. Supporting two forms of the plugin can help increase adoption for a variety of user setups, and really isn't too hard once you have the right setup. Which this tries to be.
+This is a react monorepo for people writing babel plugins in normal plugin form as well as [`babel-plugin-macros`][babel-plugin-macros] form. Supporting two forms of the plugin can help increase adoption for a variety of user setups, and really isn't too hard once you have the right setup. Which this tries to be.
 
 **if you spot something that could be a better practice, PLEASE open an issue or [tell me I'm wrong!](https://twitter.com/swyx)**
 
@@ -10,6 +10,6 @@ You should have read through the [babel handbook](https://github.com/jamiebuilds
 
 ## Usage
 
-Clone, not fork, this repo. Write your plugin and tests in `babel-plugin-boilerplate`, and then handle the macro portion in `boilerplate.macro`. Rename both of them to whatever your new name is.
+Clone, not fork, this repo. Write your plugin and tests in `babel-plugin-react`, and then handle the macro portion in `react.macro`. Rename both of them to whatever your new name is.
 
 When you are done writing and testing, run `lerna publish` from this root level and you should be good to go.

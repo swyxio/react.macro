@@ -1,0 +1,15 @@
+{
+  "name": "react.macro",
+  "version": "0.0.1",
+  "description": "babel-plugin-react-globals",
+  "main": "index.js",
+  "keywords": [
+    "babel-plugin-macros",
+    "babel-macros"
+  ],
+  "author": "swyx <your@name.us> (http://yourname.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "babel-plugin-react-globals": "^0.0.1"
+  }
+}
