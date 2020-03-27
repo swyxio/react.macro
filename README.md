@@ -6,9 +6,9 @@ This:
 
 ```js
 /*eslint no-undef: 0 */
-import { macro } from 'react.macro'; //optional if not using babel macro
-macro(); //optional if not using babel macro
+import React from "react.macro"; //optional if not using babel macro
 
+const ctx = createContext(5);
 export default function Timer() {
   const [state, setState] = useState(0);
   const myRef = React.useRef(0);
@@ -20,7 +20,9 @@ Translates to:
 
 ```js
 /*eslint no-undef: 0 react/jsx-no-undef: 0*/
-import React from 'react'; // added if absent, not duplicated if present
+import React from "react";
+
+const ctx = React.createContext(5);
 export default function Timer() {
   const [state, setState] = React.useState(0);
   const myRef = React.useRef(0);
@@ -28,7 +30,7 @@ export default function Timer() {
 }
 ```
 
-Turning off the ESLint no undef warning is helpful for this
+Turning off the ESLint no undef warning is helpful for this.
 
 ---
 
@@ -43,7 +45,7 @@ Codesandbox Demo: https://codesandbox.io/s/n5xp37z894
 
 ASTExplorer histories and testing
 
-- switch to [no invocation needed](https://astexplorer.net/#/gist/ebdc9ffceac03882d325e601c28d87a8/56b1d719ab9b9c3e3cf31c473a83c0d5a68bba64)
+- v0.09: switch to [no invocation needed](https://astexplorer.net/#/gist/ebdc9ffceac03882d325e601c28d87a8/56b1d719ab9b9c3e3cf31c473a83c0d5a68bba64)
 - v0.08: [added ConcurrentMode and StrictMode](https://astexplorer.net/#/gist/ebdc9ffceac03882d325e601c28d87a8/c9f54d9fc16e347247dcc3426aa843b408a356dd)
 - v0.07: https://astexplorer.net/#/gist/ebdc9ffceac03882d325e601c28d87a8/62d9235c51bd3586e35a8df8fa9f5f1f61eeb561
 - v0.06: https://astexplorer.net/#/gist/ebdc9ffceac03882d325e601c28d87a8/795d0a75132ec44476b1f6cc2460f6147f43b65a

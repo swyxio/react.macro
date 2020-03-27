@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-react-globals",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Generate code at build-time",
   "main": "dist/index.js",
   "engines": {
@@ -26,7 +26,6 @@
     "babel",
     "code generation"
   ],
-  "author": "your name <your@name.us> (http://yourname.com/)",
   "license": "MIT",
   "dependencies": {
     "babel-plugin-macros": "^2.2.1",
@@ -50,10 +49,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sw-yx/react.macro.git"
+    "url": "git+https://github.com/sw-yx/react.macro.git"
   },
   "bugs": {
     "url": "https://github.com/sw-yx/react.macro/issues"
   },
-  "homepage": "https://github.com/sw-yx/react.macro#readme"
+  "homepage": "https://github.com/sw-yx/react.macro#readme",
+  "author": ""
 }

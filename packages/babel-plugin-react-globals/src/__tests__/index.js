@@ -19,7 +19,13 @@ const fixture = filename => ({
 pluginTester({
   plugin,
   snapshot: true,
-  babelOptions: {filename: __filename},
+  babelOptions: {
+    filename: __filename,
+
+    parserOpts: {
+      plugins: ['jsx'],
+    },
+  },
   tests: {
     'basic test of functionality': fixture('basic'),
   },

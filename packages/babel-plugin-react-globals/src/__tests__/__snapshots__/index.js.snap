@@ -1,11 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ast-transform basic value: basic value 1`] = `
+exports[`babel-plugin-react-globals basic test of functionality: basic test of functionality 1`] = `
 
-const x = boilerplate\`module.exports = "1"\`
+import React from 'react.macro'
+
+const CTX = createContext(4)
+const Hi = () => {
+  const state = useState(4)
+  return <div> hi </div>
+}
+
+class App extends Component {
+  render() {}
+}
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const x = etalpreliob\`module.exports = "1"\`;
+import React from 'react.macro';
+
+const CTX = React.createContext(4);
+const Hi = () => {
+  const state = React.useState(4);
+  return <div> hi </div>;
+};
+
+class App extends React.Component {
+  render() {}
+}
 
 `;
