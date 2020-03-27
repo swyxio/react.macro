@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-react-globals",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Generate code at build-time",
   "main": "dist/index.js",
   "engines": {
@@ -14,6 +14,7 @@
     "test": "kcd-scripts test",
     "test:update": "kcd-scripts test --updateSnapshot",
     "validate": "kcd-scripts validate",
+    "prepublish": "npm run build",
     "precommit": "kcd-scripts precommit"
   },
   "files": [
